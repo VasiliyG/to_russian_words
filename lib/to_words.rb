@@ -9,19 +9,19 @@ module ToWords
   include ToWords::Divisions
   include ToWords::Utils
 
-  def to_words
+  def to_words(russian_case = 'nominative')
     num = numerical?(self)
     num, sign = check_sign(num)
-    return (sign + UNDER_HUNDRED[num]) if num <= 100
+    return (sign + send("#{russian_case.upcase}_UNDER_HUNDRED")[num]) if num <= 100
     counter = 0
     result = []
     while num != 0
       num, remaining = num.divmod(1000)
       temp_result = result_below_one_thousand(remaining, counter)
-      result << temp_result + " " + DIVISIONS[counter] + " " if temp_result
+      result << temp_result + ' ' + send("#{russian_case.upcase}DIVISIONS")[counter] + ' ' if temp_result
       counter += 1
     end
-    sign + result.reverse.join(", ").rstrip
+    sign + result.reverse.join(', ').rstrip
   end
 end
 
