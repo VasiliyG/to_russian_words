@@ -33,3 +33,7 @@ end
 class String
   include ToWords
 end
+
+class Fixnum
+  include ToWords
+end
