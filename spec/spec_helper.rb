@@ -2,7 +2,7 @@
 require "coveralls"
 Coveralls.wear!
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "to_words"
+require "to_russian_words"
 require "pry"
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

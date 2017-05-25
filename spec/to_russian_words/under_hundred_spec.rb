@@ -2,7 +2,7 @@
 require_relative "../spec_helper"
 RSpec.describe "UNDER_HUNDRED" do
   let(:subject) do
-    ToWords::UnderHundred::UNDER_HUNDRED
+    ToRussianWords::UnderHundred::NOMINATIVE_UNDER_HUNDRED
   end
 
   it { is_expected.to be_a Hash }

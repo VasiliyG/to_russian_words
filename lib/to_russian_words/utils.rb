@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require_relative './under_hundred.rb'
 require_relative "./divisions.rb"
-module ToWords
+module ToRussianWords
   module Utils
     include UnderHundred
     include Divisions

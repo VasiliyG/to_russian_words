@@ -1,15 +1,19 @@
 # frozen_string_literal: true
-module ToWords
-  require "to_words/version"
-  require_relative "./to_words/under_hundred.rb"
-  require_relative "./to_words/divisions.rb"
-  require_relative "./to_words/utils.rb"
+module ToRussianWords
+  require "to_russian_words/version"
+  require_relative "./to_russian_words/under_hundred.rb"
+  require_relative "./to_russian_words/divisions.rb"
+  require_relative "./to_russian_words/utils.rb"
 
-  include ToWords::UnderHundred
-  include ToWords::Divisions
-  include ToWords::Utils
+  include ToRussianWords::UnderHundred
+  include ToRussianWords::Divisions
+  include ToRussianWords::Utils
 
   def to_words(russian_case = 'nominative')
+    to_russian_words(russian_case)
+  end
+
+  def to_russian_words(russian_case = 'nominative')
     num = numerical?(self)
     num, sign = check_sign(num)
     return (sign + under_hundred(russian_case)[num]) if num <= 100
@@ -27,13 +31,13 @@ end
 
 INTEGER_KLASS = 1.class # Fixnum before Ruby 2.4, Integer from Ruby 2.4
 class INTEGER_KLASS
-  include ToWords
+  include ToRussianWords
 end
 
 class String
-  include ToWords
+  include ToRussianWords
 end
 
 class Fixnum
-  include ToWords
+  include ToRussianWords
 end

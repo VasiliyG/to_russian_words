@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module ToWords
+module ToRussianWords
   module Divisions
     NOMINATIVE_DIVISIONS = [
       '',

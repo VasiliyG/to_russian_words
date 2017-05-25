@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module ToWords
+module ToRussianWords
   module UnderHundred
     NOMINATIVE_UNDER_HUNDRED = {
       0 => "ноль",

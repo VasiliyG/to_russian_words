@@ -2,17 +2,17 @@
 # frozen_string_literal: true
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "to_words/version"
+require "to_russian_words/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "to_words"
-  spec.version       = ToWords::VERSION
-  spec.authors       = ["Taimur Akhtar"]
-  spec.email         = ["taimur.akhtar@square63.com"]
-  spec.summary       = "This would convert numbers into words."
+  spec.name          = "to_russian_words"
+  spec.version       = ToRussianWords::VERSION
+  spec.authors       = ["Vasiliy Gandzha"]
+  spec.email         = ["vasivik@vasivik.ru"]
+  spec.summary       = "This would convert numbers into russian words."
   spec.description   = "This gem would convert a number into its equivalent"\
-  " words(english)."
-  spec.homepage      = "https://github.com/taimur-akhtar/to_words"
+  " words(russian)."
+  spec.homepage      = "https://github.com/VasiliyG/to_russian_words"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
