@@ -7,16 +7,18 @@ e.g.
     25.to_words('dative') # "двадцати пяти" 
     70.to_words('dative') # "семидесяти" 
     70.to_words() # "семьдесят" 
+    
+With large numbers may be inaccurate, fix ... soon :)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'to_words', git: 'git://github.com/VasiliyG/to_words.git', tag: 'v1.0.7'
+    gem 'to_words', '1.1.1'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 ## Usage
 
