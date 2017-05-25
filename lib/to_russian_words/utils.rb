@@ -14,11 +14,11 @@ module ToRussianWords
     end
 
     def higher_than_hundred(hundred, remaining, counter, russian_case)
-      century = under_hundred(russian_case)[hundred]
+      century = (hundred == 1 ? '' : under_hundred(russian_case)[hundred])
       if remaining != 0
-        return century + "#{hundred_name(russian_case)} " + under_hundred(russian_case)[remaining]
+        return century + "#{hundred_name(russian_case, remaining)} " + under_hundred(russian_case)[remaining]
       end
-      return century + "#{hundred_name(russian_case)} " if remaining == 0
+      return century + "#{hundred_name(russian_case, remaining)} " if remaining == 0
     end
 
     def check_sign(num)
@@ -49,12 +49,23 @@ module ToRussianWords
       end
     end
 
-    def hundred_name(russian_case)
+    def hundred_name(russian_case, remaining)
+      remaining = remaining.to_s.last.to_i
       case russian_case
       when 'dative'
-        'сот'
+        if remaining == 1
+          'ста'
+        else
+          'сот'
+        end
       else
-        'ста'
+        if remaining == 1
+          'сто'
+        elsif remaining.between?(2, 4)
+          'ста'
+        else
+          'сот'
+        end
       end
     end
   end
