@@ -12,13 +12,13 @@ module ToWords
   def to_words(russian_case = 'nominative')
     num = numerical?(self)
     num, sign = check_sign(num)
-    return (sign + send("#{russian_case.upcase}_UNDER_HUNDRED")[num]) if num <= 100
+    return (sign + under_hundred(russian_case)[num]) if num <= 100
     counter = 0
     result = []
     while num != 0
       num, remaining = num.divmod(1000)
-      temp_result = result_below_one_thousand(remaining, counter)
-      result << temp_result + ' ' + send("#{russian_case.upcase}DIVISIONS")[counter] + ' ' if temp_result
+      temp_result = result_below_one_thousand(remaining, counter, russian_case)
+      result << temp_result + ' ' + divisions(russian_case)[counter] + " " if temp_result
       counter += 1
     end
     sign + result.reverse.join(', ').rstrip
