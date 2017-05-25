@@ -18,10 +18,10 @@ module ToWords
     while num != 0
       num, remaining = num.divmod(1000)
       temp_result = result_below_one_thousand(remaining, counter, russian_case)
-      result << temp_result + ' ' + divisions(russian_case)[counter] + " " if temp_result
+      result << temp_result + ' ' + divisions(russian_case)[counter] + ' ' if temp_result
       counter += 1
     end
-    sign + result.reverse.join(', ').rstrip
+    sign + result.reverse.join(' ').rstrip
   end
 end
 
