@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 require_relative './under_hundred.rb'
+require_relative "./to_words/divisions.rb"
 module ToWords
   module Utils
     include UnderHundred
+    include Divisions
 
     def result_below_one_thousand(num, counter, russian_case)
       hundred, remaining = num.divmod(100)
