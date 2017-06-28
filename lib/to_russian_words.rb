@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 module ToRussianWords
-  require "to_russian_words/version"
-  require_relative "./to_russian_words/under_hundred.rb"
-  require_relative "./to_russian_words/divisions.rb"
-  require_relative "./to_russian_words/utils.rb"
+  require 'to_russian_words/version'
+  require_relative './to_russian_words/under_hundred.rb'
+  require_relative './to_russian_words/divisions.rb'
+  require_relative './to_russian_words/utils.rb'
 
   include ToRussianWords::UnderHundred
   include ToRussianWords::Divisions
