@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative "../spec_helper"
 RSpec.describe "DIVISIONS" do
   let(:subject) do
@@ -12,10 +13,14 @@ RSpec.describe "DIVISIONS" do
   end
 
   it "has '' at index 0" do
-    expect(subject[0]).to eq ""
+    expect(subject[0][0]).to eq ""
   end
 
   it "is expected to be frozen" do
     expect(subject.frozen?).to be true
+  end
+
+  it "is expected to be frozen" do
+    expect(subject[0].frozen?).to be true
   end
 end
